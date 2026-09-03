@@ -30,15 +30,15 @@ body {
 }
 .input:focus {
   outline: none;
-  border-color: #4F46E5;
-  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
+  border-color: #DC2626;
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.15);
 }
 .input::placeholder {
   color: #94A3B8;
 }
 
 .btn-primary {
-  background: #4F46E5;
+  background: #DC2626;
   color: #fff;
   padding: 0.6rem 1.1rem;
   font-size: 0.875rem;
@@ -47,7 +47,7 @@ body {
   transition: background 0.15s ease;
 }
 .btn-primary:hover {
-  background: #4338CA;
+  background: #B91C1C;
 }
 .btn-primary:disabled {
   opacity: 0.5;
@@ -71,10 +71,10 @@ body {
 .link-btn {
   font-size: 0.8125rem;
   font-weight: 600;
-  color: #4F46E5;
+  color: #DC2626;
 }
 .link-btn:hover {
-  color: #4338CA;
+  color: #B91C1C;
 }
 
 .badge {
@@ -107,8 +107,8 @@ body {
   transition: border-color 0.15s ease, box-shadow 0.15s ease;
 }
 .pick-tile:hover {
-  border-color: #4F46E5;
-  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.08);
+  border-color: #DC2626;
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.08);
 }
 
 @media (prefers-reduced-motion: no-preference) {
