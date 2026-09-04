@@ -20,7 +20,7 @@ This repository contains the frontend web application for the Library Management
 ---
 
 ## Deployed Application URL
-- **Live Demo:** [[http://34.143.253.90/](https://eca-frontend-505725712054.asia-southeast1.run.app)]
+- **Live Demo:** [https://eca-frontend-505725712054.asia-southeast1.run.app]
 
 ---
 
