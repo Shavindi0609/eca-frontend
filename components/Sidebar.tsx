@@ -40,27 +40,29 @@ export default function Sidebar() {
   return (
       <>
         {/* Desktop: fixed vertical sidebar */}
-        <aside className="hidden md:flex md:flex-col md:fixed md:inset-y-0 md:left-0 md:w-64 bg-white border-r border-slate-200 shadow-sm">
-          <div className="h-16 flex items-center px-6 border-b border-slate-100">
-            <Link href="/" className="font-extrabold text-xl tracking-tight text-slate-900 flex items-center gap-2">
-              <span className="w-8 h-8 rounded-lg bg-red-600 flex items-center justify-center text-white font-bold text-base shadow-sm shadow-red-600/30">L</span>
-              Library<span className="text-red-600">.</span>
+        <aside className="hidden md:flex md:flex-col md:fixed md:inset-y-0 md:left-0 md:w-64 bg-slate-900/80 backdrop-blur-xl border-r border-slate-800 shadow-2xl z-40">
+          <div className="h-20 flex items-center px-6 border-b border-slate-800/80">
+            <Link href="/" className="font-black text-xl tracking-tight text-white flex items-center gap-3 group">
+            <span className="w-10 h-10 rounded-2xl bg-indigo-600 flex items-center justify-center text-white font-bold text-lg shadow-lg shadow-indigo-600/30 group-hover:scale-105 transition-transform">
+              L
+            </span>
+              <span>Library<span className="text-indigo-400">.</span></span>
             </Link>
           </div>
-          <nav className="flex-1 px-3 py-6 space-y-1.5">
+          <nav className="flex-1 px-4 py-6 space-y-2">
             {LINKS.map((link) => {
               const active = pathname === link.href;
               return (
                   <Link
                       key={link.href}
                       href={link.href}
-                      className={`flex items-center gap-3 px-3.5 py-3 rounded-xl text-sm font-medium transition-all duration-150 ${
+                      className={`flex items-center gap-3 px-4 py-3.5 rounded-2xl text-sm font-semibold transition-all duration-200 ${
                           active
-                              ? "bg-red-600 text-white shadow-md shadow-red-600/25 font-semibold"
-                              : "text-slate-600 hover:text-slate-900 hover:bg-slate-50"
+                              ? "bg-indigo-600 text-white shadow-lg shadow-indigo-600/30 border border-indigo-500/50"
+                              : "text-slate-400 hover:text-white hover:bg-slate-800/60 border border-transparent"
                       }`}
                   >
-                    <svg className="w-[18px] h-[18px] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
+                    <svg className={`w-5 h-5 shrink-0 ${active ? "text-white" : "text-slate-400"}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                       {ICONS[link.icon]}
                     </svg>
                     {link.label}
@@ -68,35 +70,43 @@ export default function Sidebar() {
               );
             })}
           </nav>
-          <div className="px-6 py-5 border-t border-slate-100 bg-slate-50/50 text-xs text-slate-500">
-            API Gateway
-            <p className="text-slate-900 font-semibold truncate mt-1 bg-white px-2.5 py-1.5 rounded-md border border-slate-200 text-[11px]">
+          <div className="px-6 py-5 border-t border-slate-800/80 bg-slate-950/40 text-xs text-slate-400">
+            <div className="flex items-center justify-between mb-1.5">
+              <span className="font-semibold uppercase tracking-wider text-[10px] text-indigo-400">API Gateway</span>
+              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+            </div>
+            <p className="text-slate-300 font-mono truncate px-3 py-2 rounded-xl bg-slate-900 border border-slate-800 text-[11px] select-all">
               {process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:8089"}
             </p>
           </div>
         </aside>
 
         {/* Mobile: compact top bar */}
-        <header className="md:hidden bg-white border-b border-slate-200 sticky top-0 z-30 shadow-sm">
-          <div className="px-4 h-14 flex items-center justify-between">
-            <Link href="/" className="font-extrabold text-base tracking-tight text-slate-900 flex items-center gap-2">
-              <span className="w-7 h-7 rounded-lg bg-red-600 flex items-center justify-center text-white font-bold text-sm shadow-sm shadow-red-600/30">L</span>
-              Library<span className="text-red-600">.</span>
+        <header className="md:hidden bg-slate-900/80 backdrop-blur-xl border-b border-slate-800 sticky top-0 z-30 shadow-xl">
+          <div className="px-4 h-16 flex items-center justify-between">
+            <Link href="/" className="font-black text-lg tracking-tight text-white flex items-center gap-2.5">
+            <span className="w-8 h-8 rounded-xl bg-indigo-600 flex items-center justify-center text-white font-bold text-sm shadow-md shadow-indigo-600/30">
+              L
+            </span>
+              <span>Library<span className="text-indigo-400">.</span></span>
             </Link>
           </div>
-          <nav className="flex gap-1.5 px-3 pb-2.5 overflow-x-auto scrollbar-none">
+          <nav className="flex gap-2 px-4 pb-3 overflow-x-auto scrollbar-none">
             {LINKS.map((link) => {
               const active = pathname === link.href;
               return (
                   <Link
                       key={link.href}
                       href={link.href}
-                      className={`px-3.5 py-2 text-xs font-medium rounded-lg whitespace-nowrap transition-all ${
+                      className={`px-4 py-2 text-xs font-semibold rounded-xl whitespace-nowrap transition-all duration-200 flex items-center gap-2 ${
                           active
-                              ? "bg-red-600 text-white shadow-sm shadow-red-600/20 font-semibold"
-                              : "text-slate-600 bg-slate-50 hover:text-slate-900 hover:bg-slate-100 border border-slate-200/60"
+                              ? "bg-indigo-600 text-white shadow-md shadow-indigo-600/30 border border-indigo-500/50"
+                              : "text-slate-400 bg-slate-800/50 hover:text-white hover:bg-slate-800 border border-slate-700/50"
                       }`}
                   >
+                    <svg className="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                      {ICONS[link.icon]}
+                    </svg>
                     {link.label}
                   </Link>
               );
@@ -106,4 +116,3 @@ export default function Sidebar() {
       </>
   );
 }
-
