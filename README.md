@@ -3,7 +3,7 @@
 ## Student Information
 - **Student Name:** Shavindi R. Aloka
 - **Student Number:** [241711095]
-- **Slack Handle:** [Shavindi Aloka]
+- **Slack Handle:** [shavindi aloka]
 - **GCP Project ID:** [project-c2d114f1-e0c4-497d-a05]
 
 ---
@@ -14,7 +14,7 @@ This repository contains the frontend web application for the Library Management
 ---
 
 ## Technology Stack
-- **Framework / Library:** React / Vite
+- **Framework / Library:** Next.js / Vite
 - **Deployment Model:** PaaS / Serverless (Google Cloud)
 
 ---
