@@ -27,5 +27,5 @@ This repository contains the frontend web application for the Library Management
 ## Setup / Getting Started Instructions
 1. Clone the repository:
    ```bash
-   git clone [https://github.com/Shavindi0609/library-frontend.git](https://github.com/Shavindi0609/library-frontend.git)
+   git clone https://github.com/Shavindi0609/eca-frontend.git
 
